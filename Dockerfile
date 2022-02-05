@@ -4,4 +4,5 @@ RUN mkdir -p /usr/local/boxfuse
 COPY /boxfuse/* /usr/local/boxfuse/
 RUN cd /usr/local/boxfuse && mvn package
 RUN cp /usr/local/boxfuse/target/*.war /var/lib/tomcat9/webapps/
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
