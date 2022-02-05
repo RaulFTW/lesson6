@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 RUN apt-get update && apt-get install default-jdk tomcat9 maven -y
 RUN mkdir -p /usr/local/boxfuse
 
-ENV CATALINA_HOME="/opt/tomcat" \
-PATH="$PATH:/opt/tomcat/bin"
+ENV CATALINA_HOME="/opt/tomcat9" \
+PATH="$PATH:/opt/tomcat9/bin"
 
 RUN rm -fr /opt/tomcat/webapps/*
 
