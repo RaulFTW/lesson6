@@ -7,4 +7,4 @@ RUN cd /usr/local/boxfuse && mvn package
 RUN cp /usr/local/boxfuse/target/*.war /var/lib/tomcat9/webapps/
 
 EXPOSE 8080
-CMD /usr/local/tomcat/bin/catalina.sh run
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
