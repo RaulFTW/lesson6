@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+MAINTAINER raul1991de@gmail.com
+
 RUN apt-get update && apt-get install curl default-jdk maven -y
 
 RUN mkdir /opt/tomcat/
@@ -13,6 +15,7 @@ RUN mkdir /usr/local/boxfuse/
 COPY /boxfuse/* /usr/local/boxfuse/
 RUN cd /usr/local/boxfuse && mvn package
 RUN cp /usr/local/boxfuse/target/*.war /opt/tomcat/webapps
+WORKDIR /opt/tomcat/webapps
 
 EXPOSE 8080
 
