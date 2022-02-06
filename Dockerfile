@@ -12,7 +12,7 @@ RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.58/* /opt/tomcat/.
 
 RUN mkdir /usr/local/boxfuse/
-COPY /boxfuse/* /usr/local/boxfuse/
+COPY /boxfuse/ /usr/local/boxfuse/
 RUN cd /usr/local/boxfuse && mvn package
 RUN cp /usr/local/boxfuse/target/*.war /opt/tomcat/webapps
 WORKDIR /opt/tomcat/webapps
