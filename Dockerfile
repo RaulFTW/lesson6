@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 
 MAINTAINER raul1991de@gmail.com
+ENV TZ=Europe/Moscow
 
-RUN apt-get update && apt-get install -y git curl default-jdk maven
+RUN apt-get update && apt-get install -y tzdata git curl default-jdk maven
 
 RUN mkdir /opt/tomcat/
 
