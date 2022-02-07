@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 
 MAINTAINER raul1991de@gmail.com
-ENV TZ=Europe/Moscow
+
+ENV TZ=Europe/Minsk
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get install -y tzdata git curl default-jdk maven
 
