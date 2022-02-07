@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 MAINTAINER raul1991de@gmail.com
 
-RUN apt-get update && apt-get install git curl default-jdk maven -y
+RUN apt-get update && apt-get install curl default-jdk maven -y
 
 RUN mkdir /opt/tomcat/
 
