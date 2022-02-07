@@ -14,6 +14,11 @@ RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.58/* /opt/tomcat/.
 
+RUN mkdir -p /root/.ssh
+ADD id_rsa /root/.ssh/id_rsa
+RUN chmod 700 /root/.ssh/id_rsa
+RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
+
 RUN git clone git@github.com:boxfuse/boxfuse-sample-java-war-hello.git /usr/local/boxfuse-sample-java-war-hello
 RUN cd /usr/local/boxfuse-sample-java-war-hello && mvn package
 RUN cp /usr/local/boxfuse-sample-java-war-hello/target/*.war /opt/tomcat/webapps
